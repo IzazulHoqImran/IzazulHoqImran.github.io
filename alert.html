@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="svg" href="fac.svg">
+    <title>Loading . . . </title> 
+    <script>
+        setTimeout(function(){
+          window.location.href = "index.html";
+        }, 2000);
+      </script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+</style>
+<style type="text/css" media="print">
+    BODY {
+        display: none;
+        visibility: hidden;
+    }
+</style>
+<style>
+    body {
+        cursor: none !important;
+        user-select: none !important;
+    }
+    
+    .cursor {
+        z-index: 999;
+        position: fixed;
+        background: var(--skin-color);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        pointer-events: none;
+        box-shadow: 0 0 20px #f00, 0 0 60px #f00, 0 0 100px #f00;
+        opacity: 1;
+        animation: colors 3.5s infinite;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+    
+    @keyframes colors {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+    
+    .cursor:before {
+        content: '';
+        position: absolute;
+        background: #f00;
+        width: 40px;
+        height: 40px;
+        opacity: .5;
+        transform: translate(-30%, -30%);
+        border-radius: 50%;
+    }
+</style>
+
+<body bgcolor="#151515">
+   
+    </div>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> -->
+    <script src="./typed.js"></script>
+<script>
+    var typed = new Typed(".typing", {
+        strings: [" . . ."],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true
+    })
+</script>
+<script>
+    window.oncontextmenu = function() {
+        console.log("User Inspection is not Allowed");
+        return false;
+    }
+</script>
+<script>
+    window.onoffline = function() {
+        alert(" ! ! !  YOU ARE NOT CONNECTED TO THE INTERNET  ! ! ! ");
+        document.getElementById('amca').hidden = true;
+        return false;
+    }
+</script>
+<script>
+    window.ononline = function() {
+        alert("! ! !  YOU BACK TO ONLINE  ! ! !", "YOU ARE CONNECTED TO INTERNET ", "success");
+        document.getElementById('amca').hidden = false;
+        return false;
+    }
+</script>
+    <script>
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "s" && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                alert("Save this Page is not allowed on this website!");
+            }
+        });
+    </script>
+<script type="text/javascript">
+    const cursor = document.querySelector(".cursor");
+    var timeout;
+
+    //follow cursor on mousemove
+    document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
+
+        cursor.style.top = y + "px";
+        cursor.style.left = x + "px";
+        cursor.style.display = "block";
+
+        //cursor effects when mouse stopped
+        function mouseStopped() {
+            cursor.style.display = "none";
+        }
+        clearTimeout(timeout);
+        timeout = setTimeout(mouseStopped, 99000);
+    });
+
+    //cursor effects when mouseout
+    document.addEventListener("mouseout", () => {
+        cursor.style.display = "none";
+    });
+</script>
+<noscript style="height: 100px;color: aliceblue;margin:19%;background: linear-gradient( #b88746, #fdf5a6);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;text-align:center;font-family: 'Cinzel', serif;font-size: 40px;font-weight: 700;">Sorry, your browser does not support JavaScript!</noscript>
+
+</html>
